@@ -31,7 +31,7 @@ function(X)
 	        sigma2 <- log((p-1+exp(s2))/p)
 		mu1 <- m+s2/2-sigma2/2
 		p.value <- pnorm(w1,mean=mu1,sd=sqrt(sigma2),lower.tail=FALSE) 
-		results <- list(statistic=c(MVW=wast),"p.value"=p.value, method = "Generalized Shapiro-Wilk test for Multivariate Normality", data.name=dname)
+		results <- list(statistic=c(MVW=wast),"p.value"=p.value, method = "Generalized Shapiro-Wilk test for Multivariate Normality by Villasenor-Alva and Gonzalez-Estrada", data.name=dname)
 		class(results) = "htest"
 		return(results)
 	}

@@ -23,11 +23,18 @@ When d=1, \code{mvShapiro.Test(X)} produces the same results as \code{shapiro.te
   \item{data.name}{ a character string giving the name of the data set.  }
 }
 \references{ Villasenor-Alva, J.A. and Gonzalez-Estrada, E. (2009). A generalization of Shapiro-Wilk's test for multivariate normality. \emph{Communications in Statistics: Theory and Methods},\bold{38} 11,1870-1883.  }
-\author{ Elizabeth Gonzalez Estrada \email{egonzalez@colpos.mx}, Jose A. Villasenor Alva }
+\author{ Elizabeth Gonzalez-Estrada \email{egonzalez@colpos.mx}, Jose A. Villasenor-Alva }
 \seealso{  \code{\link{shapiro.test}}}
 \examples{
-X <-  matrix(rnorm(40),ncol=2)        ## Two dimensional random sample of size 20
-mvShapiro.Test(X)                       ## Testing multivariate normality on X
+X <-  matrix(rnorm(40),ncol=2)    # Generating a two dimensional random sample of size 20
+mvShapiro.Test(X)                 # Testing multivariate normality on X
+
+#-----------------------------------------------------------------------------------
+# iris.virginica contains a set of measurements corresponding to 
+# Iris virginica of the famous  iris dataset.
+
+iris.virginica <- as.matrix(iris[iris$Species == "virginica",1:4],ncol=4) 
+mvShapiro.Test(iris.virginica)    # Testing multivariate normality on iris.virginica
 }
 \keyword{ htest }
 \keyword{ multivariate }
